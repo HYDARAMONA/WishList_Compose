@@ -26,11 +26,13 @@ A modern Android app for managing wishes with **local persistence** using Room D
 
 ---
 
+```mermaid
 graph TD
-UI[Compose UI] -->|Events| VM[ViewModel]
-VM -->|State| UI
-VM -->|Data| Repo[Repository]
-Repo -->|CRUD| DB[Room Database]
+    UI[Compose UI] -->|Events| VM[ViewModel]
+    VM -->|State| UI
+    VM -->|Data| Repo[Repository]
+    Repo -->|CRUD| DB[Room Database]
+```
 
 ## 📦 Project Structure
 
@@ -47,3 +49,4 @@ WishList/
 │   │   └── theme/          # Material 3 Theming
 ├── build.gradle
 └── README.md               # You are here!
+```
