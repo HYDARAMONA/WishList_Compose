@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -33,6 +34,7 @@ import com.example.a13wishlistapp.presentation.navigation.ScreensTypes
 import com.example.a13wishlistapp.presentation.ui.addEditDetailScreen.components.WishTextField
 import com.example.a13wishlistapp.presentation.ui.wishListScreen.components.MyAppBar
 import com.example.a13wishlistapp.presentation.viewModel.WishViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
@@ -110,6 +112,7 @@ fun AddEditDetailScreen(
                                     description = viewModel.wishDescriptionState.trim()
                                 )
                             )
+                            snackMessage.value = "Wish Has Been Updated"
                         } else {
                             // Add Wish
                             viewModel.addWish(
@@ -118,14 +121,24 @@ fun AddEditDetailScreen(
                                     description = viewModel.wishDescriptionState.trim()
                                 )
                             )
-                            snackMessage.value = "Wish Has Benn Added"
+                            snackMessage.value = "Wish Has Been Added"
                         }
                     } else {
                         // Show Message TO Add Wish
                         snackMessage.value = "Enter Fields to Create a Wish"
                     }
                     scope.launch {
-                        snackBarHostState.showSnackbar(snackMessage.value)
+                        val snackbarJob = launch {
+                            snackBarHostState.showSnackbar(
+                                message = snackMessage.value,
+                                duration = SnackbarDuration.Indefinite
+                            )
+                        }
+
+                        delay(1500)
+                        snackBarHostState.currentSnackbarData?.dismiss()
+                        snackbarJob.cancel()
+
                         navHostController.navigate(ScreensTypes.WishListScreen)
                     }
                 },

@@ -14,6 +14,12 @@ A modern Android app for managing wishes with **local persistence** using Room D
 
 ---
 
+## 📽️ Demo
+
+![App Demo](assets/demo.gif)
+
+---
+
 ## 🛠️ Tech Stack
 
 | Component        | Technology         | Key Dependency                                     |

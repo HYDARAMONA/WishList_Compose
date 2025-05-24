@@ -39,9 +39,6 @@ fun WishListScreen(viewModel: WishViewModel, navHostController: NavHostControlle
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    Toast.makeText(context, "FloatingActionButton Clicked", Toast.LENGTH_LONG)
-                        .show()
-
                     navHostController.navigate(ScreensTypes.AddWishItem(id = 0L))
                 },
                 modifier = Modifier.padding(20.dp),
