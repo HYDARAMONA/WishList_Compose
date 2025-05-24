@@ -23,7 +23,7 @@ A modern Android app for managing wishes with **local persistence** using Room D
     </td>
     <td align="center">
       <img src="assets/demo2.gif" alt="Demo 2" width="300" style="border-radius: 8px;" /><br/>
-      <strong>🗑️ Delete Wish</strong>
+      <strong>🗑️ Update & Delete Wish</strong>
     </td>
   </tr>
 </table>
