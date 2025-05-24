@@ -14,9 +14,10 @@ A modern Android app for managing wishes with **local persistence** using Room D
 
 ---
 
-## 📽️ Demo
-
-![App Demo](assets/demo.gif)
+<h2>📽️ Demo</h2>
+<p align="center">
+  <img src="assets/demo.gif" alt="App Demo" width="320" style="border-radius: 8px;" />
+</p>
 
 ---
 
